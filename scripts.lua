@@ -153,53 +153,6 @@ Tabs.Main:AddToggle("", {Title = "Auto Farm Money", Default = getgenv().Settings
     end)
 end)
 
-Tabs.Main:AddParagraph({Title = "Random Chest",Content = ""})
-
-Tabs.Main:AddToggle("", {Title = "Common Chests", Default = false }):OnChanged(function(va)
-    getgenv().CC = va
-    game:GetService('RunService').Stepped:connect(function()
-        if getgenv().CC then
-            workspace:WaitForChild("ItemBoughtFromShop"):InvokeServer("Common Chest",1)            
-        end 
-    end)
-end)
-
-Tabs.Main:AddToggle("", {Title = "Uncommon Chests", Default = false }):OnChanged(function(va)
-    getgenv().UCC = va
-    game:GetService('RunService').Stepped:connect(function()
-    if getgenv().UCC then
-    workspace:WaitForChild("ItemBoughtFromShop"):InvokeServer("Uncommon Chest",1)    
-    end
-    end)
-end)
-
-Tabs.Main:AddToggle("", {Title = "Rare Chest", Default = false }):OnChanged(function(va)
-    getgenv().RC = va
-    game:GetService('RunService').Stepped:connect(function()
-    if getgenv().RC then
-    workspace:WaitForChild("ItemBoughtFromShop"):InvokeServer("Rare Chest",1)    
-    end
-    end)
-end)
-
-Tabs.Main:AddToggle("", {Title = "Epic Chests", Default = false }):OnChanged(function(va)
-    getgenv().EC = va
-    game:GetService('RunService').Stepped:connect(function()
-    if getgenv().EC then
-        workspace:WaitForChild("ItemBoughtFromShop"):InvokeServer("Epic Chest",1)    
-    end
-    end)
-end)
-
-Tabs.Main:AddToggle("", {Title = "Legendary Chests", Default = false }):OnChanged(function(va)
-    getgenv().LC = va
-    game:GetService('RunService').Stepped:connect(function()
-    if getgenv().LC then
-        workspace:WaitForChild("ItemBoughtFromShop"):InvokeServer("Legendary Chest",1)    
-    end 
-    end)
-end)
-
 Tabs.Main:AddParagraph({Title = "Servers",Content = ""})
 
 Tabs.Main:AddToggle("", {Title = "Auto Rejoin (When You Got Kick The Server)", Default = getgenv().Settings.Start }):OnChanged(function(va)
